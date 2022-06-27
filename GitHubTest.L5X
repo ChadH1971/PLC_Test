@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="20.05" TargetName="GitHubTest" TargetType="Controller" ContainsContext="false" Owner="IT Department, Berry Petroleum Company" ExportDate="Mon Jun 27 08:23:59 2022" ExportOptions="DecoratedData ForceProtectedEncoding AllProjDocTrans">
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="20.05" TargetName="GitHubTest" TargetType="Controller" ContainsContext="false" Owner="IT Department, Berry Petroleum Company" ExportDate="Mon Jun 27 08:30:20 2022" ExportOptions="DecoratedData ForceProtectedEncoding AllProjDocTrans">
 <Controller Use="Target" Name="GitHubTest" ProcessorType="1756-L72" MajorRev="20" MinorRev="11" CompatibilityMode="V20.01" TimeSlice="20" ShareUnusedTimeSlice="1" ProjectCreationDate="Mon Jun 27 07:49:49 2022" LastModifiedDate="Mon Jun 27 08:23:32 2022" SFCExecutionControl="CurrentActive"
  SFCRestartPosition="MostRecent" SFCLastScan="DontScan" ProjectSN="16#0000_0000" MatchProjectToController="false" CanUseRPIFromProducer="false" InhibitAutomaticFirmwareUpdate="0">
 <RedundancyInfo Enabled="false" KeepTestEditsOnSwitchOver="false" IOMemoryPadPercentage="90" DataTablePadPercentage="50"/>
@@ -38,6 +38,12 @@
 </Data>
 </Tag>
 <Tag Name="Output4" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="SingleOut" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
 <Data>00</Data>
 <Data Format="Decorated">
 <DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
@@ -110,6 +116,15 @@
 <Rung Number="3" Type="N">
 <Text>
 <![CDATA[XIC(Variable4)OTE(Output4);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="SecondLadder" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[XIC(Output1)XIO(Output2)XIO(Output3)XIO(Output4)OTE(SingleOut);]]>
 </Text>
 </Rung>
 </RLLContent>
