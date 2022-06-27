@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="20.05" TargetName="GitHubTest" TargetType="Controller" ContainsContext="false" Owner="IT Department, Berry Petroleum Company" ExportDate="Mon Jun 27 08:19:46 2022" ExportOptions="DecoratedData ForceProtectedEncoding AllProjDocTrans">
-<Controller Use="Target" Name="GitHubTest" ProcessorType="1756-L72" MajorRev="20" MinorRev="11" CompatibilityMode="V20.01" TimeSlice="20" ShareUnusedTimeSlice="1" ProjectCreationDate="Mon Jun 27 07:49:49 2022" LastModifiedDate="Mon Jun 27 08:03:34 2022" SFCExecutionControl="CurrentActive"
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="20.05" TargetName="GitHubTest" TargetType="Controller" ContainsContext="false" Owner="IT Department, Berry Petroleum Company" ExportDate="Mon Jun 27 08:23:59 2022" ExportOptions="DecoratedData ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Target" Name="GitHubTest" ProcessorType="1756-L72" MajorRev="20" MinorRev="11" CompatibilityMode="V20.01" TimeSlice="20" ShareUnusedTimeSlice="1" ProjectCreationDate="Mon Jun 27 07:49:49 2022" LastModifiedDate="Mon Jun 27 08:23:32 2022" SFCExecutionControl="CurrentActive"
  SFCRestartPosition="MostRecent" SFCLastScan="DontScan" ProjectSN="16#0000_0000" MatchProjectToController="false" CanUseRPIFromProducer="false" InhibitAutomaticFirmwareUpdate="0">
 <RedundancyInfo Enabled="false" KeepTestEditsOnSwitchOver="false" IOMemoryPadPercentage="90" DataTablePadPercentage="50"/>
 <Security Code="0" ChangesToDetect="16#ffff_ffff_ffff_ffff"/>
@@ -37,6 +37,12 @@
 <DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
 </Data>
 </Tag>
+<Tag Name="Output4" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
 <Tag Name="ST_OUT" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
 <Data>00</Data>
 <Data Format="Decorated">
@@ -44,6 +50,12 @@
 </Data>
 </Tag>
 <Tag Name="ST_OUT2" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="ST_OUT3" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
 <Data>00</Data>
 <Data Format="Decorated">
 <DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
@@ -62,6 +74,12 @@
 </Data>
 </Tag>
 <Tag Name="Variable3" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="Variable4" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
 <Data>00</Data>
 <Data Format="Decorated">
 <DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
@@ -87,6 +105,11 @@
 <Rung Number="2" Type="N">
 <Text>
 <![CDATA[XIC(Variable3)OTE(Output3);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[XIC(Variable4)OTE(Output4);]]>
 </Text>
 </Rung>
 </RLLContent>
@@ -115,6 +138,18 @@
 <![CDATA[END_IF;]]>
 </Line>
 <Line Number="7">
+<![CDATA[]]>
+</Line>
+<Line Number="8">
+<![CDATA[IF Output4 THEN]]>
+</Line>
+<Line Number="9">
+<![CDATA[	ST_OUT3 :=1;]]>
+</Line>
+<Line Number="10">
+<![CDATA[END_IF;]]>
+</Line>
+<Line Number="11">
 <![CDATA[]]>
 </Line>
 </STContent>
